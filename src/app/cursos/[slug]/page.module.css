@@ -1,0 +1,285 @@
+.breadcrumb {
+  padding: 1rem 0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding-top: 5rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+.backLink:hover { color: var(--color-primary); }
+
+/* ── Course Hero ───────────────────────────────────────────── */
+.courseHero {
+  position: relative;
+  padding: 3rem 0 4rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.courseHeroInner {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 4rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.courseHeroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.courseHeroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+}
+
+.courseHeroDesc {
+  font-size: 1.0625rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Meta strip */
+.courseMeta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.courseMetaItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+.metaLabel {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+  margin-bottom: 0.125rem;
+}
+
+.metaValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Enroll card */
+.enrollCard {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.enrollPrice {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.03em;
+}
+
+.enrollPriceSub {
+  font-size: 0.8125rem;
+  color: var(--color-text-faint);
+  margin-top: -0.75rem;
+}
+
+.enrollFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.enrollFeatureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.enrollBtn { width: 100%; justify-content: center; }
+
+.enrollNote {
+  font-size: 0.75rem;
+  color: var(--color-text-faint);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ── Content ───────────────────────────────────────────────── */
+.contentGrid {
+  max-width: 800px;
+}
+
+.contentMain {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contentBlock {}
+
+.contentBlockTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.objectiveGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+}
+
+.objectiveItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+}
+
+.syllabusAccordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.syllabusItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  transition: background var(--transition-fast);
+}
+.syllabusItem:last-child { border-bottom: none; }
+.syllabusItem:hover { background: var(--color-surface-raised); }
+
+.syllabusNumber {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  min-width: 24px;
+  margin-top: 2px;
+}
+
+/* Instructor */
+.instructorCard {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.instructorAvatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-border-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.instructorName {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-white);
+  margin-bottom: 0.25rem;
+}
+
+.instructorRole {
+  font-size: 0.8125rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.instructorBio {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Related */
+.relatedTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+}
+
+.relatedCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.relatedCardTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.relatedCardMeta {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .courseHeroInner { grid-template-columns: 1fr; }
+  .enrollCard { position: static; }
+  .objectiveGrid { grid-template-columns: 1fr; }
+}

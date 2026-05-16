@@ -1,0 +1,187 @@
+/* ── Page Hero ─────────────────────────────────────────────── */
+.pageHero {
+  position: relative;
+  padding: 10rem 0 6rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.pageHeroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.pageTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+  margin: 1rem 0;
+}
+
+.accent { color: var(--color-primary); }
+
+.pageSubtitle {
+  font-size: 1.0625rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* ── Services Stack ────────────────────────────────────────── */
+.servicesStack {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.serviceBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.serviceBlockReverse { direction: rtl; }
+.serviceBlockReverse > * { direction: ltr; }
+
+.serviceBlockLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.serviceBlockIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-border-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.serviceBlockTitle {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+}
+
+.serviceBlockDesc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.serviceBlockRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.serviceBlockFeatureTitle {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.serviceFeatureList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.serviceFeatureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+/* ── Process ───────────────────────────────────────────────── */
+.sectionCenter {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.sectionCenter .section-subtitle { margin: 0 auto; }
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.processCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.processNumber {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.processTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.processDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ── CTA Strip ─────────────────────────────────────────────── */
+.ctaStrip {
+  padding: 5rem 0;
+  text-align: center;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.ctaStripTitle {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+}
+
+.ctaStripSub {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .serviceBlock,
+  .serviceBlockReverse { grid-template-columns: 1fr; direction: ltr; gap: 2.5rem; }
+  .processGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .processGrid { grid-template-columns: 1fr; }
+}

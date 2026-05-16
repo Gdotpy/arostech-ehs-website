@@ -1,0 +1,229 @@
+.pageHero {
+  position: relative;
+  padding: 10rem 0 5rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.pageHeroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.pageTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+  margin: 1rem 0;
+}
+
+.accent { color: var(--color-primary); }
+
+.pageSubtitle {
+  font-size: 1.0625rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ── Contact Grid ──────────────────────────────────────────── */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* ── Form ──────────────────────────────────────────────────── */
+.formWrap {}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  width: auto;
+}
+
+.formDisclaimer {
+  font-size: 0.8125rem;
+  color: var(--color-text-faint);
+  line-height: 1.5;
+}
+
+.formDisclaimer a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.errorNote {
+  padding: 0.875rem 1rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: #f87171;
+}
+
+.errorNote a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ── Success State ─────────────────────────────────────────── */
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 3rem 2.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.successIcon {
+  color: var(--color-success);
+}
+
+.successTitle {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.successDesc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* ── Sidebar ───────────────────────────────────────────────── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contactInfoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sidebarTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.contactInfoList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+.contactInfoList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+.contactInfoIcon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-border-red);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.contactInfoLabel {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+  margin-bottom: 0.2rem;
+}
+
+.contactInfoValue {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+  display: block;
+}
+
+a.contactInfoValue:hover { color: var(--color-primary); }
+
+.whatsappBtn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+  border-color: rgba(34,197,94,0.3);
+  color: var(--color-success);
+}
+
+.whatsappBtn:hover {
+  border-color: var(--color-success);
+  background: rgba(34,197,94,0.08);
+  color: var(--color-success);
+}
+
+/* ── Response card ─────────────────────────────────────────── */
+.responseCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1.5rem;
+}
+
+.responseIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-border-red);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.responseTitle {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.responseDesc {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contactGrid { grid-template-columns: 1fr; }
+  .sidebar { order: -1; }
+}
+
+@media (max-width: 600px) {
+  .submitBtn { width: 100%; justify-content: center; }
+}
