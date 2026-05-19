@@ -70,7 +70,7 @@ export async function POST(req: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'ArosTech EHS <noreply@safetytech.aros-tech.com>',
+        from: 'ArosTech EHS <noreply@aros-tech.com>',
         to: ['info@aros-tech.com'],
         reply_to: correo,
         subject: `Nueva consulta EHS de ${nombre} — ${empresa}`,
