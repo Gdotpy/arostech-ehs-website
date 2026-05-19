@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Search Console and analytics
+
+The deployed pre-release URL is `https://arostech-ehs-website.vercel.app/`.
+
+Optional environment variables:
+
+- `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`: Google Search Console HTML meta verification content.
+- `NEXT_PUBLIC_UMAMI_WEBSITE_ID`: Umami website ID. If absent, no analytics script is loaded.
+- `NEXT_PUBLIC_UMAMI_SCRIPT_URL`: Umami script URL. Defaults to `https://cloud.umami.is/script.js`.
+
+Google Search Console still needs an owner-provided verification value or DNS record. Do not mark verification complete until Search Console confirms the property.

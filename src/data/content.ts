@@ -91,7 +91,7 @@ export const courses = [
     format: 'Presencial',
     nom: 'NOM-002-STPS-2010',
     price: '$1,600 MXN',
-    description: 'Formación de brigadas contra incendios, uso de extintores, evacuación y planes de emergencia. Incluye constancia DC-3 con validez STPS.',
+    description: 'Formación de brigadas contra incendios, uso de extintores, evacuación y planes de emergencia. Incluye apoyo documental para constancia DC-3 cuando aplica.',
     objectives: [],
     syllabus: [],
   },
@@ -102,7 +102,7 @@ export const services = [
     id: 'consulting',
     icon: 'ShieldCheck',
     title: 'Consultoría de Seguridad',
-    description: 'Asesoría experta en seguridad e higiene industrial. Evaluamos riesgos, diseñamos programas de prevención y garantizamos el cumplimiento ante STPS y SEMARNAT.',
+    description: 'Asesoría experta en seguridad e higiene industrial. Evaluamos riesgos, diseñamos programas de prevención y ayudamos a preparar evidencia ante STPS y SEMARNAT.',
     features: [
       'Diagnóstico de condiciones de seguridad',
       'Elaboración de programas de seguridad e higiene',
@@ -115,7 +115,7 @@ export const services = [
     id: 'training',
     icon: 'GraduationCap',
     title: 'Capacitación Industrial',
-    description: 'Cursos presenciales y en línea con validez STPS y emisión de constancias DC-3. Plataforma digital de aprendizaje disponible 24/7.',
+    description: 'Cursos presenciales y en línea con apoyo documental para constancias DC-3. Plataforma digital de aprendizaje disponible 24/7.',
     features: [
       'Más de 20 cursos certificados STPS',
       'Emisión automática de constancias DC-3',

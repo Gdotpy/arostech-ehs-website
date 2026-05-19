@@ -3,7 +3,7 @@ import { useState, FormEvent } from 'react'
 import Link from 'next/link'
 import {
   Mail, Phone, MapPin, MessageSquare, Clock,
-  Send, CheckCircle2, ChevronRight
+  Send, CheckCircle2
 } from 'lucide-react'
 import { useRevealAll } from '@/hooks/useReveal'
 import styles from './page.module.css'
@@ -33,11 +33,12 @@ export default function ContactoPage() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setStatus('sending')
+    const cta = new URLSearchParams(window.location.search).get('cta') || ''
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, cta, leadSource: cta ? 'CTA contextual' : 'Contacto general' }),
       })
       if (res.ok) {
         setStatus('success')

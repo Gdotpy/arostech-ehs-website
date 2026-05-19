@@ -110,6 +110,42 @@
   color: var(--color-text);
 }
 
+/* ── Focus Pages ───────────────────────────────────────────── */
+.focusGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.focusCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 290px;
+}
+
+.focusCard h3 {
+  color: var(--color-white);
+  font-size: 1.05rem;
+}
+
+.focusCard p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.focusCard span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 /* ── Process ───────────────────────────────────────────────── */
 .sectionCenter {
   text-align: center;
@@ -180,8 +216,10 @@
 @media (max-width: 900px) {
   .serviceBlock,
   .serviceBlockReverse { grid-template-columns: 1fr; direction: ltr; gap: 2.5rem; }
-  .processGrid { grid-template-columns: repeat(2, 1fr); }
+  .processGrid,
+  .focusGrid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 500px) {
-  .processGrid { grid-template-columns: 1fr; }
+  .processGrid,
+  .focusGrid { grid-template-columns: 1fr; }
 }

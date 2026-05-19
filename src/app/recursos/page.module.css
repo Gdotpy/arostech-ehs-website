@@ -1,0 +1,84 @@
+.pageHero {
+  position: relative;
+  padding: 10rem 0 5.5rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.pageHeroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.pageTitle {
+  margin: 1rem 0;
+  color: var(--color-white);
+  font-size: clamp(2.25rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.pageSubtitle {
+  color: var(--color-text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.resourceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.resourceCard {
+  display: flex;
+  flex-direction: column;
+  min-height: 310px;
+  gap: 1rem;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-primary);
+}
+
+.resourceCard h2 {
+  color: var(--color-white);
+  font-size: 1.25rem;
+}
+
+.resourceCard p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .resourceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .resourceGrid {
+    grid-template-columns: 1fr;
+  }
+}

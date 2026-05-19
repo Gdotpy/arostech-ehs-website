@@ -63,6 +63,19 @@
   text-underline-offset: 2px;
 }
 
+.formContext {
+  padding: 0.875rem 1rem;
+  color: var(--color-text);
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-border-red);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+}
+
+.formContext strong {
+  color: var(--color-white);
+}
+
 .errorNote {
   padding: 0.875rem 1rem;
   background: rgba(239, 68, 68, 0.08);

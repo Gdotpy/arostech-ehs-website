@@ -1,16 +1,22 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar/Navbar'
 import Footer from '@/components/Footer/Footer'
+import { siteUrl } from '@/data/marketing'
+
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
+const umamiScriptUrl = process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL || 'https://cloud.umami.is/script.js'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://safetytech.aros-tech.com'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'ArosTech EHS | Seguridad Industrial, STPS, ISO y DC3 en México',
     template: '%s | ArosTech EHS',
   },
   description:
-    'ArosTech EHS ofrece soluciones integrales de seguridad industrial, salud ocupacional y medio ambiente. Cursos con DC3, consultoría ISO 45001/14001 y gestión de cumplimiento STPS.',
+    'ArosTech EHS ofrece soluciones integrales de seguridad industrial, salud ocupacional y medio ambiente. Cursos STPS, apoyo documental DC-3, consultoría ISO 45001/14001 y gestión de evidencia.',
   keywords: [
     'seguridad industrial', 'capacitaciones STPS', 'certificación ISO 45001',
     'consultoría medio ambiente', 'cursos STPS en línea', 'DC3 digital México',
@@ -19,11 +25,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_MX',
-    url: 'https://safetytech.aros-tech.com',
+    url: siteUrl,
     siteName: 'ArosTech EHS',
     images: [{ url: '/images/hero.png', width: 1200, height: 630 }],
   },
   robots: { index: true, follow: true },
+  ...(googleVerification ? { verification: { google: googleVerification } } : {}),
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -34,6 +41,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
       </body>
+      {umamiWebsiteId && (
+        <Script
+          src={umamiScriptUrl}
+          data-website-id={umamiWebsiteId}
+          strategy="afterInteractive"
+        />
+      )}
     </html>
   )
 }

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Shield, Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
+import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 import styles from './Footer.module.css'
 
 const standards = ['ISO 45001', 'ISO 14001', 'STPS', 'NOM-009', 'DC-3', 'SEMARNAT']
@@ -44,10 +44,10 @@ export default function Footer() {
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Servicios</h4>
             <ul className={styles.colLinks}>
-              <li><Link href="/servicios">Consultoría de Seguridad</Link></li>
-              <li><Link href="/servicios">Capacitación Industrial</Link></li>
-              <li><Link href="/servicios">Auditorías ISO</Link></li>
-              <li><Link href="/servicios">Gestión Ambiental</Link></li>
+              <li><Link href="/servicios/dc3-sirce">DC-3 / SIRCE</Link></li>
+              <li><Link href="/servicios/seguridad-telecom-alturas">Telecom y alturas</Link></li>
+              <li><Link href="/servicios/iso-45001">ISO 45001</Link></li>
+              <li><Link href="/servicios/iso-14001">ISO 14001</Link></li>
             </ul>
           </div>
 
@@ -56,6 +56,7 @@ export default function Footer() {
             <ul className={styles.colLinks}>
               <li><Link href="/nosotros">Nosotros</Link></li>
               <li><Link href="/cursos">Catálogo de Cursos</Link></li>
+              <li><Link href="/recursos">Recursos</Link></li>
               <li><Link href="/contacto">Contacto</Link></li>
               <li><Link href="#">Aviso de Privacidad</Link></li>
             </ul>

@@ -1,13 +1,14 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Shield, ChevronRight } from 'lucide-react'
+import { Menu, X, ChevronRight } from 'lucide-react'
 import styles from './Navbar.module.css'
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/servicios', label: 'Servicios' },
   { href: '/cursos', label: 'Cursos' },
+  { href: '/recursos', label: 'Recursos' },
   { href: '/nosotros', label: 'Nosotros' },
 ]
 

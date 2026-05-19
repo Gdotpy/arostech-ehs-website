@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 import styles from './page.module.css'
 import { courses } from '@/data/content'
+import { siteUrl } from '@/data/marketing'
 import { useRevealAll } from '@/hooks/useReveal'
 
 /* ── Animated Counter ─────────────────────────────────────── */
@@ -70,7 +71,7 @@ const industries = [
 
 /* ── Platform Features ────────────────────────────────────── */
 const platformFeatures = [
-  { icon: FileCheck, label: 'DC-3 Automático', desc: 'Genera constancias oficiales en segundos' },
+  { icon: FileCheck, label: 'Control DC-3', desc: 'Organiza constancias y evidencia por trabajador' },
   { icon: BarChart3, label: 'Dashboard de Cumplimiento', desc: 'Visualiza el estado de tu empresa en tiempo real' },
   { icon: Clock, label: 'Alertas de Vencimiento', desc: 'Recibe notificaciones antes de que expiren certificaciones' },
   { icon: Zap, label: 'Repositorio de Evidencias', desc: 'Centraliza auditorías, fotos e informes' },
@@ -86,9 +87,43 @@ export default function HomePage() {
   useRevealAll()
 
   const ActiveIcon = industries[activeIndustry].icon
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'ArosTech EHS',
+    url: siteUrl,
+    logo: `${siteUrl}/images/hero.png`,
+    email: 'contacto@aros-tech.com',
+    telephone: '+52-800-123-4567',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Monterrey',
+      addressRegion: 'Nuevo León',
+      addressCountry: 'MX',
+    },
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'ArosTech',
+      url: 'https://aros-tech.com',
+    },
+    areaServed: 'MX',
+    serviceType: [
+      'Consultoría EHS',
+      'Capacitación STPS',
+      'Gestión DC-3',
+      'ISO 45001',
+      'ISO 14001',
+    ],
+  }
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationJsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
       {/* ══ HERO ══════════════════════════════════════════════ */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>
@@ -118,12 +153,12 @@ export default function HomePage() {
 
           <p className={styles.heroSubtitle}>
             Cumplimiento EHS moderno para la industria mexicana. Consultoría ISO 45001/14001,
-            capacitación STPS y tecnología de cumplimiento normativo.
+            capacitación STPS y tecnología para ordenar evidencia de cumplimiento.
           </p>
 
           <div className={styles.heroCtas}>
             <Link href="/contacto" className="btn btn-primary btn-lg">
-              Solicita una Consulta Gratis <ChevronRight size={18} />
+              Solicitar diagnóstico <ChevronRight size={18} />
             </Link>
             <Link href="/servicios" className="btn btn-outline btn-lg">
               Ver Servicios
@@ -177,7 +212,7 @@ export default function HomePage() {
           <div className={`grid-4 ${styles.serviceGrid}`}>
             {[
               { icon: Shield, title: 'Consultoría de Seguridad', desc: 'Asesoría experta en normativa STPS y SEMARNAT. Diagnósticos, programas de seguridad y atención de inspecciones.', href: '/servicios' },
-              { icon: GraduationCap, title: 'Capacitación Industrial', desc: 'Cursos certificados STPS en línea y presenciales. Emisión automática de constancias DC-3 oficiales.', href: '/cursos' },
+              { icon: GraduationCap, title: 'Capacitación Industrial', desc: 'Cursos STPS en línea y presenciales con apoyo documental para constancias DC-3.', href: '/cursos' },
               { icon: ClipboardList, title: 'Gestión de Incidentes', desc: 'Investigación de accidentes, registro digital y planes de acción correctiva para reducir recurrencias.', href: '/servicios' },
               { icon: Award, title: 'Auditorías ISO', desc: 'Implementación ISO 45001/14001, formación de auditores internos y acompañamiento a la certificación.', href: '/servicios' },
             ].map((s, i) => (
@@ -207,7 +242,7 @@ export default function HomePage() {
               en un solo lugar.
             </h2>
             <p className={`section-subtitle reveal reveal-delay-2`}>
-              Olvida las hojas de cálculo. Nuestra plataforma centraliza capacitaciones, certificaciones DC-3 y evidencias de auditoría en un dashboard intuitivo.
+              Olvida las hojas de cálculo. Nuestra plataforma centraliza capacitaciones, constancias DC-3 y evidencias de auditoría en un dashboard intuitivo.
             </p>
 
             <div className={styles.featureList}>
@@ -225,7 +260,7 @@ export default function HomePage() {
             </div>
 
             <Link href="/contacto" className={`btn btn-primary reveal reveal-delay-4 ${styles.platformCta}`}>
-              Solicitar Demo <ChevronRight size={16} />
+              Hablar con un especialista <ChevronRight size={16} />
             </Link>
           </div>
 
@@ -355,7 +390,7 @@ export default function HomePage() {
             ].map((t, i) => (
               <div key={t.name} className={`card ${styles.testimonialCard} reveal reveal-delay-${i + 1}`}>
                 <div className={styles.testimonialStars}>★★★★★</div>
-                <p className={styles.testimonialQuote}>"{t.quote}"</p>
+                <p className={styles.testimonialQuote}>&ldquo;{t.quote}&rdquo;</p>
                 <div className={styles.testimonialAuthor}>
                   <div className={styles.testimonialAvatar}>
                     {t.name.split(' ').map(w => w[0]).slice(0, 2).join('')}
@@ -384,7 +419,7 @@ export default function HomePage() {
           </p>
           <div className={styles.ctaBannerActions}>
             <Link href="/contacto" className="btn btn-primary btn-lg">
-              Solicitar Evaluación Gratis <ChevronRight size={18} />
+              Solicitar diagnóstico <ChevronRight size={18} />
             </Link>
             <Link href="/cursos" className="btn btn-outline btn-lg">
               Ver Catálogo de Cursos

@@ -41,10 +41,10 @@ export default function CursosPage() {
           <p className="eyebrow">Catálogo de Cursos</p>
           <h1 className={styles.pageTitle}>
             Capacitación certificada<br />
-            <span className={styles.accent}>con validez STPS.</span>
+            <span className={styles.accent}>con enfoque STPS.</span>
           </h1>
           <p className={styles.pageSubtitle}>
-            Cursos presenciales y en línea con emisión de constancias DC-3. Formamos a tu equipo para cumplir con la normativa mexicana y los estándares ISO.
+            Cursos presenciales y en línea con apoyo documental para constancias DC-3. Formamos a tu equipo para ordenar capacitación, evidencia y prácticas de seguridad.
           </p>
         </div>
       </section>
@@ -142,13 +142,13 @@ export default function CursosPage() {
         <div className={`container ${styles.dc3Inner}`}>
           <div className={styles.dc3Icon}>DC-3</div>
           <div>
-            <h3 className={styles.dc3Title}>Todos nuestros cursos incluyen constancia DC-3</h3>
+            <h3 className={styles.dc3Title}>Apoyo documental para constancias DC-3</h3>
             <p className={styles.dc3Sub}>
-              Generamos el documento oficial con validez ante la STPS de forma digital, listo para descarga inmediata al completar la capacitación.
+              Te ayudamos a preparar evidencia y documentación de capacitación para que tu expediente sea más claro y fácil de revisar.
             </p>
           </div>
           <Link href="/contacto" className="btn btn-primary">
-            Inscribirse <ChevronRight size={15} />
+            Solicitar curso <ChevronRight size={15} />
           </Link>
         </div>
       </section>

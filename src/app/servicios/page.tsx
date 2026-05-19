@@ -5,6 +5,7 @@ import {
   CheckCircle2, ChevronRight, ArrowRight
 } from 'lucide-react'
 import { services } from '@/data/content'
+import { serviceLandingPages } from '@/data/marketing'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function ServiciosPage() {
             Desde el diagnóstico inicial hasta la certificación ISO, somos el socio estratégico que tu empresa necesita para operar con seguridad, confianza y sin sorpresas ante las autoridades.
           </p>
           <Link href="/contacto" className="btn btn-primary btn-lg">
-            Solicitar Consulta Gratis <ChevronRight size={18} />
+            Solicitar diagnóstico <ChevronRight size={18} />
           </Link>
         </div>
       </section>
@@ -88,8 +89,33 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* Process */}
+      {/* Focus Pages */}
       <section className="section section--alt">
+        <div className="container">
+          <div className={styles.sectionCenter}>
+            <p className="eyebrow">Soluciones prioritarias</p>
+            <h2 className="section-title">Páginas de acción rápida.</h2>
+            <p className="section-subtitle">
+              Rutas directas para los temas que suelen bloquear auditorías, ingreso a sitio o preparación ISO.
+            </p>
+          </div>
+          <div className={styles.focusGrid}>
+            {serviceLandingPages.map((page) => (
+              <Link key={page.slug} href={`/servicios/${page.slug}`} className={`card ${styles.focusCard}`}>
+                <span className="badge badge-red">{page.eyebrow}</span>
+                <h3>{page.metadataTitle}</h3>
+                <p>{page.metadataDescription}</p>
+                <span>
+                  Ver solución <ArrowRight size={14} />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="section">
         <div className="container">
           <div className={styles.sectionCenter}>
             <p className="eyebrow">Nuestra Metodología</p>
@@ -116,7 +142,7 @@ export default function ServiciosPage() {
           <h2 className={styles.ctaStripTitle}>¿Cuál servicio necesitas?</h2>
           <p className={styles.ctaStripSub}>Cuéntanos tu situación y te proponemos el paquete ideal.</p>
           <Link href="/contacto" className="btn btn-primary btn-lg">
-            Contáctanos Ahora <ChevronRight size={18} />
+            Hablar con un especialista <ChevronRight size={18} />
           </Link>
         </div>
       </section>

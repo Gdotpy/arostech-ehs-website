@@ -1,0 +1,176 @@
+.pageHero {
+  position: relative;
+  padding: 10rem 0 6rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 3rem;
+  align-items: center;
+}
+
+.pageTitle {
+  max-width: 820px;
+  margin: 1rem 0;
+  color: var(--color-white);
+  font-size: clamp(2.2rem, 5vw, 3.65rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.pageSubtitle {
+  max-width: 680px;
+  margin-bottom: 2rem;
+  color: var(--color-text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.heroCard {
+  padding: 2rem;
+  background: rgba(8, 8, 9, 0.72);
+  border: 1px solid var(--color-border-red);
+  border-radius: var(--radius-lg);
+}
+
+.heroIcon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  border: 1px solid var(--color-border-red);
+  border-radius: var(--radius-md);
+}
+
+.heroCard h2 {
+  margin-bottom: 0.75rem;
+  color: var(--color-white);
+  font-size: 1.25rem;
+}
+
+.heroCard p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.listStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 1.5rem;
+}
+
+.listItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.listItem svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--color-primary);
+}
+
+.sectionCenter {
+  max-width: 680px;
+  margin-bottom: 2.5rem;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.processCard {
+  min-height: 190px;
+}
+
+.processNumber {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.32;
+}
+
+.processCard p {
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.relatedBand {
+  padding: 4rem 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.relatedInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.relatedTitle {
+  color: var(--color-white);
+  font-size: 2rem;
+}
+
+.relatedLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .heroGrid,
+  .contentGrid,
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .relatedInner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .relatedLinks {
+    justify-content: flex-start;
+  }
+}
