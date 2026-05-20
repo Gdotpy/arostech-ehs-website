@@ -1,6 +1,7 @@
 'use client'
 
 import { ChangeEvent, FormEvent, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { CheckCircle2, Send } from 'lucide-react'
 import styles from './LeadMagnetForm.module.css'
 
@@ -15,6 +16,7 @@ const painOptions = [
 ]
 
 export default function LeadMagnetForm() {
+  const router = useRouter()
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [formData, setFormData] = useState({
     nombre: '',
@@ -53,6 +55,9 @@ export default function LeadMagnetForm() {
           mensaje: message,
           leadSource: 'Lead magnet: Checklist STPS y DC-3 para contratistas',
           cta: 'Descargar checklist',
+          leadMagnetSlug: 'checklist-stps-dc3-contratistas',
+          leadMagnetTitle: 'Checklist STPS y DC-3 para contratistas',
+          leadMagnetDownloadUrl: '/downloads/checklist-stps-dc3-contratistas.pdf',
         }),
       })
 
@@ -61,19 +66,7 @@ export default function LeadMagnetForm() {
         return
       }
 
-      setStatus('success')
-      setFormData({
-        nombre: '',
-        correo: '',
-        empresa: '',
-        telefono: '',
-        industria: '',
-        tipoContratista: '',
-        numeroTrabajadores: '',
-        principalDolor: '',
-        urgencia30Dias: '',
-        matrizCapacitacion: '',
-      })
+      router.push('/gracias/checklist-stps-dc3-contratistas')
     } catch {
       setStatus('error')
     }
