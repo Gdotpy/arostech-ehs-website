@@ -28,7 +28,7 @@ const jetBrainsMono = JetBrains_Mono({
 })
 
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
+const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || '83dc5320-0864-404e-bdfc-32f669c67e47'
 const umamiScriptUrl = process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL || 'https://cloud.umami.is/script.js'
 
 export const metadata: Metadata = {
